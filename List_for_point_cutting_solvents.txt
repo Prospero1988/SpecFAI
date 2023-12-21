@@ -1,0 +1,20 @@
+Ranges to remove in 16384 starting points: 5
+
+1 - CDCl3 (7.26ppm) points from: 5000 to: 5220
+2 - Water (3.3ppm) in DMSO, and MeOD-d4 points from: 10400 to: 10600
+3 - DMSO (2.50ppm) points from: 11500 to: 11710
+4 - Water (1.6ppm) in CDCl3 points from: 12730 to: 12920
+5 - TMS (0ppm) points from: 14920  to: 15200
+
+
+Enter the number of column ranges to be removed: 5
+Enter the start column for range 1: 5000
+Enter the end column for range 1: 5220
+Enter the start column for range 2: 10400
+Enter the end column for range 2: 10600
+Enter the start column for range 3: 11500
+Enter the end column for range 3: 11710
+Enter the start column for range 4: 12730
+Enter the end column for range 4: 12920
+Enter the start column for range 5: 14920
+Enter the end column for range 5: 15200
