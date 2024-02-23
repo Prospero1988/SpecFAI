@@ -1,0 +1,54 @@
+### Script Description
+
+This Python script is designed to perform regression analysis on datasets provided as CSV files using three different machine learning models: Support Vector Regression (SVR), AdaBoost, and Gradient Boosting. It employs Leave-One-Out Cross-Validation (LOOCV) to ensure a thorough evaluation of the model by training on all data points except one and testing on the left-out data point, iteratively for each data point. The script meticulously logs individual predictions and calculates key performance metrics such as Mean Squared Error (MSE), Root Mean Squared Error (RMSE), Mean Absolute Error (MAE), and R-squared (R2). The processing is performed concurrently across multiple files to enhance efficiency.
+
+### Operating Instructions
+
+#### Requirements
+- Python 3.x
+- Libraries: pandas, scikit-learn, math, sys, os, time, numpy, tqdm, concurrent.futures
+
+#### Steps to Run the Script
+1. **Prepare Your Dataset:**
+   - Format your data in CSV files.
+   - The first column should contain the dependent variable (the variable you're aiming to predict).
+   - The remaining columns should contain the independent variables.
+
+2. **Organize Your Files:**
+   - Place all your CSV files in a single directory. The script processes every CSV file found in the specified directory.
+
+3. **Environment Setup:**
+   - Install necessary Python libraries if they are not already installed:
+     ```bash
+     pip install pandas scikit-learn numpy tqdm
+     ```
+
+4. **Execute the Script:**
+   - Open your terminal or command prompt.
+   - Navigate to the directory containing the script.
+   - Run the script with Python and provide the path to your directory containing the CSV files as an argument:
+     ```bash
+     python <script_name>.py <directory_path_to_CSV_files>
+     ```
+   - Replace `<script_name>` with the actual name of your script file and `<directory_path_to_CSV_files>` with the path to your directory.
+
+5. **Monitor Execution:**
+   - The script displays a progress bar indicating the processing status of the files.
+   - Any errors or logs will be printed to the console during execution.
+
+6. **Review the Outputs:**
+   - After completion, the script generates:
+     1. **Debug files**: Stored in the `DEBUG` folder within the model-specific directory and named following the pattern `<script_name>_<csv_file_name>_DEBUG.csv`. They contain detailed information about each prediction made during LOOCV.
+     2. **Global Output File**: Saved as `<script_name>_output.csv` in the model-specific directory. It summarizes the model's performance metrics across all processed files, providing an aggregated view of the model's accuracy and performance.
+
+7. **Analyze the Results:**
+   - Navigate to the created directories to access and analyze the detailed metrics and summary results.
+   - Use the comprehensive data in the output files to assess each model's performance on your specific dataset.
+
+#### Additional Information
+- The script is computationally intensive due to the nature of LOOCV. Make sure your system is well-equipped to handle the computations, especially for large datasets.
+- The script is optimized for parallel processing, which significantly reduces the execution time. You may adjust the batch size and the number of workers based on your system's specifications and workload.
+- Ensure that your CSV files are correctly formatted and the data is clean to avoid errors during processing.
+- The script currently supports SVR, AdaBoost, and Gradient Boosting models. For using other models or further customization, modifications to the script might be required.
+
+For troubleshooting, customization, or optimization, consider consulting the documentation for the respective Python libraries or seeking assistance from a Python development professional.

@@ -1,0 +1,53 @@
+### Script Description
+
+This Python script is crafted to perform regression analysis on datasets in CSV format using three different machine learning models: Support Vector Regression (SVR), AdaBoost, and Gradient Boosting. The script employs a bootstrapping approach, resampling the data with replacement to estimate the model's accuracy. It computes performance metrics for each bootstrap sample and provides averaged statistics to give insights into the model's performance. Metrics such as Mean Squared Error (MSE), Root Mean Squared Error (RMSE), Mean Absolute Error (MAE), and R-squared (R2) are calculated and logged. The script is designed to process multiple CSV files concurrently, enhancing processing efficiency for larger datasets.
+
+### Operating Instructions
+
+#### Requirements
+- Python 3.x
+- Libraries: pandas, scikit-learn, math, sys, os, time, numpy, tqdm, concurrent.futures
+
+#### Steps to Run the Script
+1. **Dataset Preparation:**
+   - Ensure your dataset is in CSV format.
+   - The first column of your CSV should contain the dependent variable (the variable to predict).
+   - The remaining columns should contain independent variables.
+
+2. **File Placement:**
+   - Place all your CSV files into a single directory. The script will process each CSV file found in this directory.
+
+3. **Environment Setup:**
+   - If not already installed, install the required Python libraries using pip:
+     ```bash
+     pip install pandas scikit-learn numpy tqdm
+     ```
+
+4. **Script Execution:**
+   - Navigate to the directory where the script is located.
+   - Execute the script using Python, passing the path to your directory of CSV files as a command-line argument:
+     ```bash
+     python <script_name>.py <directory_path_to_CSV_files>
+     ```
+   - Replace `<script_name>` with your script's filename and `<directory_path_to_CSV_files>` with the path to your directory.
+
+5. **Progress Monitoring:**
+   - As the script runs, a progress bar indicates the status of file processing.
+   - Any errors or logs will be printed to the console.
+
+6. **Output Examination:**
+   - Upon completion, the script outputs:
+     1. **Debug Files**: Located in the `DEBUG` folder within the directory of each model. Named as `<script_name>_<csv_file_name>_DEBUG.csv`, these files contain detailed metrics for each bootstrap sample.
+     2. **Global Output File**: Named as `<script_name>_output.csv` and located in each model's directory. It summarizes the averaged performance metrics across all processed files.
+
+7. **Results Analysis:**
+   - Access the created directories to review the detailed metrics and summarized results.
+   - Utilize the data in the output files to evaluate the performance of each model on your dataset.
+
+#### Important Notes
+- Due to the computational nature of bootstrapping, ensure that your system is capable of handling the workload, especially with larger datasets.
+- The script is optimized for concurrent processing, which significantly speeds up the execution time. The batch size and number of workers can be adjusted in the script to suit your system's capabilities.
+- Ensure that your CSV files are correctly formatted and the data is clean to prevent processing errors.
+- The script is preset for SVR, AdaBoost, and Gradient Boosting models. If you need to include other models or customize the script further, you may need to modify the code.
+
+For troubleshooting, customizing, or optimizing, you may refer to the documentation of the respective libraries or seek help from a professional proficient in Python development.

@@ -1,0 +1,53 @@
+### Script Description
+
+This Python script performs regression analysis on CSV datasets using three different machine learning models: Support Vector Regression (SVR), AdaBoost, and Gradient Boosting. It is designed to process multiple CSV files in a specified directory, applying 10-fold cross-validation for each model to ensure the robustness of the results. The script logs detailed performance metrics for each fold and computes average statistics for the model's performance across all files. The metrics calculated include Mean Squared Error (MSE), Root Mean Squared Error (RMSE), Mean Absolute Error (MAE), and R-squared (R2). Execution time is tracked and reported for each file and for the overall batch processing.
+
+### Operating Instructions
+
+#### Requirements
+- Python 3.x
+- Libraries: pandas, sklearn, math, sys, os, time, numpy, tqdm, concurrent.futures
+
+#### Steps to Run the Script
+1. **Prepare Your Dataset:**
+   - Ensure your data is in CSV format.
+   - The first column should contain the dependent variable (the variable you're trying to predict).
+   - Remaining columns should contain the independent variables.
+
+2. **Place Your Dataset:**
+   - Put your CSV files in a single directory. The script will process all CSV files in the specified directory.
+
+3. **Set Up Your Environment:**
+   - Install the required Python libraries if you haven't already. You can use pip for installation:
+     ```bash
+     pip install pandas scikit-learn numpy tqdm
+     ```
+
+4. **Run the Script:**
+   - Navigate to the directory containing the script.
+   - Run the script using Python and pass the path to the directory containing your CSV files as an argument:
+     ```bash
+     python <script_name>.py <directory_path_to_CSV_files>
+     ```
+   - Replace `<script_name>` with the name of the script file and `<directory_path_to_CSV_files>` with the path to your directory containing the CSV files.
+
+5. **Monitor the Progress:**
+   - The script will display a progress bar for the files being processed.
+   - Debugging logs and errors (if any) will be printed to the console.
+
+6. **Check the Results:**
+   - After processing, the script generates two types of output files:
+     1. **Debug files**: These files are named in the format `<script_name>_<csv_file_name>_DEBUG.csv` and are stored in the `DEBUG` folder inside your model-specific directory. They contain detailed fold-wise metrics and errors for each data point.
+     2. **Global output file**: Named `<script_name>_output.csv`, this file is stored in the model-specific directory and summarizes the performance metrics across all processed files.
+   
+7. **Review the Output:**
+   - Navigate to the model-specific directories to review the detailed metrics and summaries.
+   - Use the information in the output files to analyze the performance of each model on your dataset.
+
+#### Important Notes
+- The script performs heavy computations, especially for large datasets. Ensure your system has adequate resources.
+- The script supports parallel processing to expedite computation. The number of workers and batch size can be adjusted in the script to match your system's capabilities.
+- Ensure the correct format and clean data in your CSV files for optimal performance and accurate results.
+- The script currently supports three regression models. If you need to use other models or customize the script, you might need to modify the code accordingly.
+
+If you encounter any issues or need further customization, refer to the documentation of the respective libraries used or consult a Python developer.
