@@ -1,8 +1,8 @@
-# -*- coding: cp1250 -*-
+# -*- coding: utf-8 -*-
 
 # Skrypt ktory ktory kopiuje wiersze z pierwszego pliku csv do nowego pliku.
-# Kopiowane sa tylko te wiersze, w których pierwsz kolumna zawiera wartoœci
-# z drugiego pliku wsadowego csv. Wartosci w drugim pliku musz¹ byc w jednej 
+# Kopiowane sa tylko te wiersze, w ktÃ³rych pierwsz kolumna zawiera wartoÂœci
+# z drugiego pliku wsadowego csv. Wartosci w drugim pliku muszÂ¹ byc w jednej 
 # kolumnie, w odrebnych wierszach.
 
 import csv
